@@ -1,2 +1,3 @@
 print("i love bugs")
-print("devs create bugs")
+print("kkk")
+print("Python")
