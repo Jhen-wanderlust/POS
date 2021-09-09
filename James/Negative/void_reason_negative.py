@@ -5,6 +5,7 @@ from selenium.webdriver.common import alert
 from selenium.webdriver.common.keys import Keys
 import time
 from keyboard import press
+import pyautogui
 from selenium.webdriver.chrome.options import Options
 options = Options()
 options.add_argument("nwapp=C:/Program Files (x86)/LSTV/POS/frontend/KRAKEN_RESTO.exe")
@@ -26,7 +27,7 @@ driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-setup/ion-co
 time.sleep(2)
 driver.switch_to.alert.accept() 
 time.sleep(3)
-driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-security-code/ion-content/div[2]/ion-grid/ion-row[5]/ion-col[2]/input").send_keys("CCW-PCH-TPP-AWA-EXH-PNO-AHP-NWX-NNP-ZRW")
+driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-security-code/ion-content/div[2]/ion-grid/ion-row[5]/ion-col[2]/input").send_keys("HEW-YRP-NWA-ANH-EWP-TCW-PNM-NHO-PYA-APH")
 time.sleep(1)
 driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-security-code/ion-content/div[2]/ion-grid/ion-row[6]/ion-col/button/span").click()
 time.sleep(2)
@@ -47,36 +48,41 @@ time.sleep(3)
 driver.execute_script("var index = 0;var find_element = false;while (find_element == false){if(document.querySelectorAll('.button-inner')[index].innerText == 'MASTER FILE'){find_element = true;    }document.querySelectorAll('.button-inner')[index].innerText;index++;}if(find_element){document.querySelectorAll('.button-inner')[index-1].click();}")
 time.sleep(2)
 
-driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-masterfiles/ion-content/div[2]/ion-grid/ion-row/ion-col/ion-item[1]/div[1]/div').click()
+driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-masterfiles/ion-content/div[2]/ion-grid/ion-row/ion-col/ion-item[12]/div[1]/div/ion-label').click()
 time.sleep(1)
-driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-header-crud/ion-content/div[2]/form/ion-card/ion-grid/ion-row[5]/ion-col/ion-item/div[1]/div/ion-input/input').send_keys(Keys.BACKSPACE)
+driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-void-reason/ion-content/div[1]/ion-fab/button').click()
 time.sleep(1)
-driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-header-crud/ion-content/div[2]/form/ion-card/ion-grid/ion-row[5]/ion-col/ion-item/div[1]/div/ion-input/input').send_keys('@')
+
+void = driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-void-reason-crud/ion-content/div[2]/form/ion-card/ion-grid/ion-row[1]/ion-col/ion-item/div[1]/div/ion-input/input').get_attribute('value')
 time.sleep(1)
-find = 0
-header = driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-header-crud/ion-content/div[2]/form/ion-card/ion-grid/ion-row[5]/ion-col/ion-item/div[1]/div/ion-input/input').get_attribute('value')
+
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-void-reason-crud/ion-content/div[2]/form/ion-card/ion-grid/ion-row[2]/ion-col/button[2]/span').click()
 time.sleep(1)
-print (header)
-for i in header:
-    if i.isdigit() or i == "-":
-        continue
-    else:
-        find  +=1
-    
-if find >0:
-    driver.execute_script('alert("VAT MUST NOT ACCEPT SPECIAL CHARACTERS EXCEPT DASH -❌ " );')
-    time.sleep(4)
+if len (void)==0:
+    driver.execute_script('alert("CANT ADD DATA IF FIELD IS EMPTY:PASSED✅");')
+    time.sleep(3)
     driver.switch_to.alert.accept() 
-    time.sleep(4)  
+    time.sleep(2)
 else:
-    driver.execute_script('alert("PASSED✅");')
-    time.sleep(4)
+    driver.execute_script('alert("BUG❌");')
+    time.sleep(3)
     driver.switch_to.alert.accept() 
-    time.sleep(4)
-print(find)
+    time.sleep(2)
 
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-void-reason-crud/ion-content/div[2]/form/ion-card/ion-grid/ion-row[1]/ion-col/ion-item/div[1]/div/ion-input/input').send_keys('Wrong Punching')
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-void-reason-crud/ion-content/div[2]/form/ion-card/ion-grid/ion-row[2]/ion-col/button[2]/span').click()
+time.sleep(1)
 
-driver.execute_script('alert("FOR ENHANCEMENT:ALERT MUST INDICATE IF DATA UPDATED SUCCESSFULLY!");')
-time.sleep(4)
+driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-void-reason/ion-header/ion-navbar/div[2]/ion-searchbar/div/input').send_keys('abcd')
+time.sleep(1)
+driver.execute_script('alert("NEGATIVE SEARCH TESTING:PASSED✅");')
+time.sleep(3)
 driver.switch_to.alert.accept() 
-time.sleep(4)
+time.sleep(2)
+
+driver.execute_script('alert("NEGATIVE TESTING:PASSED✅");')
+time.sleep(3)
+driver.switch_to.alert.accept() 
+time.sleep(2)
+
