@@ -27,13 +27,13 @@ driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-setup/ion-co
 time.sleep(2)
 driver.switch_to.alert.accept() 
 time.sleep(3)
-driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-security-code/ion-content/div[2]/ion-grid/ion-row[5]/ion-col[2]/input").send_keys("CCW-PCH-TPP-AWA-EXH-PNO-AHP-NWX-NNP-ZRW")
+driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-security-code/ion-content/div[2]/ion-grid/ion-row[5]/ion-col[2]/input").send_keys("CRO-YPW-AHW-ZWN-NOZ-AHR-NCN-EPC-YYH-PAO")
 time.sleep(1)
 driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-security-code/ion-content/div[2]/ion-grid/ion-row[6]/ion-col/button/span").click()
 time.sleep(2)
 
 #input user code
-driver.find_element_by_xpath("/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-login/ion-content/div[2]/ion-grid/ion-row[1]/ion-col/form/ion-card/ion-list/ion-item[1]/div[1]/div/ion-input/input").send_keys("lstv")
+driver.find_element_by_xpath("/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-login/ion-content/div[2]/ion-grid/ion-row[1]/ion-col/form/ion-card[2]/ion-list/ion-item[1]/div[1]/div/ion-input/input").send_keys("lstv")
 time.sleep(1)
 
 #input password
@@ -119,15 +119,12 @@ time.sleep(2)
 obj.accept()
 time.sleep(1)
 
-driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-order-preview/ion-content/div[2]/div/div[1]/div/ion-list[2]/div/ion-item/div[1]/div/ion-select/button/span').click()
-time.sleep(1)
-driver.find_element_by_xpath('/html/body/ion-app/ion-alert/div/div[3]/div/button[3]/span/div[2]').click()
-time.sleep(1)
-driver.find_element_by_xpath('/html/body/ion-app/ion-alert/div/div[4]/button[2]/span').click()
-time.sleep(1)
+
 
 
 #free transaction
+driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-order-preview/ion-content/div[2]/div/div[1]/div/button/div[1]/div').click()
+time.sleep(1)
 driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-auth-password/ion-content/div[2]/ion-card/form/ion-grid/ion-card[2]/ion-card-content/ion-row[1]/ion-col/ion-item/div[1]/div/ion-input/input').send_keys('lstv')
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-auth-password/ion-content/div[2]/ion-card/form/ion-grid/ion-card[2]/ion-card-content/ion-row[2]/ion-col/ion-item/div[1]/div/ion-input/input').send_keys('lstventures')
@@ -140,20 +137,24 @@ driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-free-reason/
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-free-reason/ion-content/div[2]/form/ion-item/div[1]/div/ion-input/input').send_keys('FREE')
 time.sleep(1)
-driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-free-reason/ion-content/div[2]/form/ion-row[2]/ion-item/div[1]/div/ion-label/button/span').click()
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-free-reason/ion-content/div[2]/form/ion-row[2]/ion-item/div[1]/div/ion-label/button').click()
 time.sleep(1)
 
-press ('enter')
-time.sleep(2)
-press ('enter')
-time.sleep(2)
-press ('enter')
-time.sleep(2)
 
+press ('enter')
+time.sleep(2)
+press ('enter')
+time.sleep(2)
+press ('enter')
+time.sleep(2)
+obj.accept()
+time.sleep(1)
+
+#back to home
 driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-orders/ion-header/ion-navbar/ion-buttons/button').click()
-time.sleep(1)
+time.sleep(2)
 driver.find_element_by_xpath('/html/body/ion-app/ion-popover/div/div[2]/div/popover/ion-list/button[2]/div[1]/div').click()
-time.sleep(1)
+time.sleep(2)
 
 #Reports
 driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-home/ion-content/div[2]/ion-list/button[7]/span').click()
@@ -162,7 +163,7 @@ driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[2]/ion-row[1]/ion-col/ion-item/div[1]/div/ion-select/button/span').click()
 time.sleep(1)
-driver.find_element_by_xpath('/html/body/ion-app/ion-alert/div/div[3]/div/button[4]/span/div[2]').click()
+driver.find_element_by_xpath('/html/body/ion-app/ion-alert/div/div[3]/div/button[5]/span/div[2]').click()
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/ion-app/ion-alert/div/div[4]/button[2]/span').click()
 time.sleep(1)
@@ -188,7 +189,24 @@ time.sleep(1)
 driver.maximize_window()
 time.sleep(4)
 press('f')
-time.sleep(3)
+time.sleep(3) 
 press('enter') 
 time.sleep(2)
 
+adobo = 120 * 2
+nilaga = 150 * 2
+sinigang = 130 * 2
+total = float(adobo) + float(nilaga) + float(sinigang)
+print (total)
+#GRAND TOTAL 
+file = open("C:/Users/SERAN/Downloads/F.csv")
+gt_value = (file.readlines())[20]
+gt_val = gt_value[1:]
+print(gt_val)
+
+if (total) == float(gt_val):
+    print("GRAND TOTAL SALES OF FREE ITEMS/TRANSACTION IN SCENARIO 5 MATCHED IN FREE ITEM REPORT")
+    time.sleep(2)
+else:
+    print("GRAND TOTAL SALES OF FREE ITEMS/TRANSACTION IN SCENARIO 5 DO NOT MATCH IN FREE ITEM REPORT")
+    time.sleep(2)

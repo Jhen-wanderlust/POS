@@ -27,13 +27,13 @@ driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-setup/ion-co
 time.sleep(2)
 driver.switch_to.alert.accept() 
 time.sleep(3)
-driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-security-code/ion-content/div[2]/ion-grid/ion-row[5]/ion-col[2]/input").send_keys("CCW-PCH-TPP-AWA-EXH-PNO-AHP-NWX-NNP-ZRW")
+driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-security-code/ion-content/div[2]/ion-grid/ion-row[5]/ion-col[2]/input").send_keys("CRO-YPW-AHW-ZWN-NOZ-AHR-NCN-EPC-YYH-PAO")
 time.sleep(1)
 driver.find_element_by_xpath("/html/body/ion-app/ion-modal/div/page-security-code/ion-content/div[2]/ion-grid/ion-row[6]/ion-col/button/span").click()
 time.sleep(2)
 
 #input user code
-driver.find_element_by_xpath("/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-login/ion-content/div[2]/ion-grid/ion-row[1]/ion-col/form/ion-card/ion-list/ion-item[1]/div[1]/div/ion-input/input").send_keys("lstv")
+driver.find_element_by_xpath("/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-login/ion-content/div[2]/ion-grid/ion-row[1]/ion-col/form/ion-card[2]/ion-list/ion-item[1]/div[1]/div/ion-input/input").send_keys("lstv")
 time.sleep(1)
 
 #input password
@@ -912,3 +912,123 @@ driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion-nav/page-reports/ion-content/div[2]/ion-list/button[4]/div[1]/div').click()
 time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[2]/ion-row[1]/ion-col/ion-item/div[1]/div/ion-select/button/span').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-alert/div/div[3]/div/button[3]/span/div[2]').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-alert/div/div[4]/button[2]/span').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[2]/ion-row[2]/ion-col[1]/ion-item/div[1]/div/ion-datetime/button/span').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-picker-cmp/div/div[1]/div[2]/button/span').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[2]/ion-row[2]/ion-col[2]/ion-item/div[1]/div/ion-datetime/button/span').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-picker-cmp/div/div[1]/div[2]/button/span').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[1]/ion-card-content/ion-row/ion-col[2]/ion-item/ion-checkbox/button').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[3]/ion-row[2]/ion-col[1]/ion-item/ion-checkbox/button').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[3]/ion-row[2]/ion-col[2]/ion-item/ion-checkbox/button').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-header/ion-navbar/div[2]/ion-title/div/button/span').click()
+time.sleep(1)
+#SAVE FILE
+driver.maximize_window()
+time.sleep(4)
+press('d')
+time.sleep(3)
+press('d')
+time.sleep(3)
+press('enter') 
+time.sleep(2)
+
+#Total # of Quantity
+file = open("C:/Users/SERAN/Downloads/dd.csv")
+tq_value = (file.readlines())[23]
+tq_val1 = tq_value[13:]
+print(tq_val1)
+
+file = open("C:/Users/SERAN/Downloads/SCENARIO 5.csv")
+tq_value1 = (file.readlines())[608]
+tq_val2 = tq_value1[16:18]
+print(tq_val2)
+if int(tq_val1) == int(tq_val2):
+    print("TOTAL NUMBER OF QTY  IN SCENARIO 5 MATCHED IN DAILY DINE REPORT")
+    time.sleep(2)
+else:
+    print("TOTAL NUMBER OF QTY  IN SCENARIO 5 DO NOT MATCH IN DAILY DINE REPORT")
+    time.sleep(2)
+
+#Total AMOUNT
+file = open("C:/Users/SERAN/Downloads/dd.csv")
+ta_value = (file.readlines())[23]
+ta_val1 = ta_value[15:21]
+print(ta_val1)
+
+file = open("C:/Users/SERAN/Downloads/SCENARIO 5.csv")
+ta_value1 = (file.readlines())[646]
+ta_val2 = ta_value1[7:11]
+print(ta_val2)
+if float(ta_val1) == float(ta_val2):
+    print("TOTAL AMOUNT  IN SCENARIO 5 MATCHED IN DAILY DINE REPORT")
+    time.sleep(2)
+else:
+    print("TOTAL AMOUNT  IN SCENARIO 5 DO NOT MATCH IN DAILY DINE REPORT")
+    time.sleep(2)
+
+# VAT Adj
+file = open("C:/Users/SERAN/Downloads/dd.csv")
+vat_value = (file.readlines())[23]
+vat_val1 = vat_value[24:27]
+print(vat_val1)
+
+file = open("C:/Users/SERAN/Downloads/SCENARIO 5.csv")
+vat_value1 = (file.readlines())[601]
+vat_val2 = vat_value1[14:15]
+print(vat_val2)
+
+if float(vat_val1) == float(vat_val2):
+    print(" VAT ADJ  IN SCENARIO 5 MATCHED IN DAILY DINE REPORT")
+    time.sleep(2)
+else:
+    print(" VAT ADJ  IN SCENARIO 5 DO NOT MATCH IN DAILY DINE REPORT")
+    time.sleep(2)
+
+#LESS DISCOUNTS
+file = open("C:/Users/SERAN/Downloads/dd.csv")
+ld_value = (file.readlines())[23]
+ld_val1 = ld_value[30:36]
+print(ld_val1)
+
+file = open("C:/Users/SERAN/Downloads/SCENARIO 5.csv")
+ld_value1 = (file.readlines())[599]
+ld_val2 = ld_value1[15:18]
+print(ld_val2)
+
+if float(ld_val1) == float(ld_val2):
+    print(" DISCOUNT  IN SCENARIO 5 MATCHED IN DAILY DINE REPORT")
+    time.sleep(2)
+else:
+    print(" DISCOUNT  IN SCENARIO 5 DO NOT MATCH IN DAILY DINE REPORT")
+    time.sleep(2)
+
+#NET SALES
+file = open("C:/Users/SERAN/Downloads/dd.csv")
+ld_value = (file.readlines())[23]
+ld_val1 = ld_value[38:]
+print(ld_val1)
+
+file = open("C:/Users/SERAN/Downloads/SCENARIO 5.csv")
+ld_value1 = (file.readlines())[602]
+ld_val2 = ld_value1[12:19]
+ld_val3=ld_val2.replace(",","")
+print(ld_val3)
+
+if float(ld_val1) == float(ld_val3):
+    print(" NET SALES  IN SCENARIO 5 MATCHED IN DAILY DINE REPORT")
+    time.sleep(2)
+else:
+    print(" NET SALES  IN SCENARIO 5 DO NOT MATCH IN DAILY DINE REPORT")
+    time.sleep(2)
