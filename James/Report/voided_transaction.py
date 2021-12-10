@@ -914,15 +914,9 @@ driver.find_element_by_xpath('/html/body/ion-app/ng-component/ion-split-pane/ion
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[2]/ion-row[1]/ion-col/ion-item/div[1]/div/ion-select/button/span').click()
 time.sleep(1)
-driver.find_element_by_xpath('/html/body/ion-app/ion-alert/div/div[3]/div/button[2]/span/div[2]').click()
+driver.find_element_by_xpath('/html/body/ion-app/ion-alert/div/div[3]/div/button[7]/span/div[2]').click()
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/ion-app/ion-alert/div/div[4]/button[2]/span').click()
-time.sleep(1)
-driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[1]/ion-card-content/ion-row/ion-col[2]/ion-item/ion-checkbox/button').click()
-time.sleep(1)
-driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[3]/ion-row[2]/ion-col[1]/ion-item/ion-checkbox/button').click()
-time.sleep(1)
-driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[3]/ion-row[2]/ion-col[2]/ion-item/ion-checkbox/button/span').click()
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[2]/ion-row[2]/ion-col[1]/ion-item/div[1]/div/ion-datetime/button/span').click()
 time.sleep(1)
@@ -932,103 +926,49 @@ driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-optio
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/ion-app/ion-picker-cmp/div/div[1]/div[2]/button/span').click()
 time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[1]/ion-card-content/ion-row/ion-col[2]/ion-item/ion-checkbox/button').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[3]/ion-row[2]/ion-col[1]/ion-item/ion-checkbox/button').click()
+time.sleep(1)
+driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-content/div[2]/form/ion-grid/ion-card[3]/ion-row[2]/ion-col[2]/ion-item/ion-checkbox/button').click()
+time.sleep(1)
 driver.find_element_by_xpath('/html/body/ion-app/ion-modal/div/page-report-option/ion-header/ion-navbar/div[2]/ion-title/div/button/span').click()
 time.sleep(1)
 
 #SAVE FILE
 driver.maximize_window()
 time.sleep(4)
-press('s')
+press('v')
+time.sleep(3)
+press('t')
 time.sleep(3)
 press('enter') 
 time.sleep(2)
 
-
-#Total # of Quantity
-file = open("C:/Users/SERAN/Downloads/s.csv")
-tq_value = (file.readlines())[18]
-tq_val1 = tq_value[13:15]
-print(tq_val1)
-
-file = open("C:/Users/SERAN/Downloads/SCENARIO 5.csv")
-tq_value1 = (file.readlines())[608]
-tq_val2 = tq_value1[16:18]
-print(tq_val2)
-if int(tq_val1) == int(tq_val2):
-    print("TOTAL NUMBER OF QTY  IN SCENARIO 5 MATCHED IN CLASS AND SUBSCLASS REPORT")
+gross = 0
+net = 0 
+#GROSS
+file = open("C:/Users/SERAN/Downloads/vt.csv")
+g_value = (file.readlines())[13]
+g_val1 = g_value[14:18]
+print(g_val1)
+print (gross)
+if float(g_val1) == float(gross):
+    print(" TOTAL GROSS OF VOIDED TRANSACTION MATCHED IN VOID ITEMS REPORT")
     time.sleep(2)
 else:
-    print("TOTAL NUMBER OF QTY  IN SCENARIO 5 DO NOT MATCH IN CLASS AND SUBSCLASS REPORT")
+    print(" TOTAL GROSS OF VOIDED TRANSACTION DO NOT MATCH IN VOID ITEMS REPORT")
     time.sleep(2)
 
-#Total AMOUNT
-file = open("C:/Users/SERAN/Downloads/s.csv")
-ta_value = (file.readlines())[18]
-ta_val1 = ta_value[17:23]
-print(ta_val1)
-
-file = open("C:/Users/SERAN/Downloads/SCENARIO 5.csv")
-ta_value1 = (file.readlines())[646]
-ta_val2 = ta_value1[7:11]
-print(ta_val2)
-if float(ta_val1) == float(ta_val2):
-    print("TOTAL AMOUNT  IN SCENARIO 5 MATCHED IN CLASS AND SUBSCLASS REPORT")
+#NET
+file = open("C:/Users/SERAN/Downloads/vt.csv")
+net_value = (file.readlines())[13]
+net_val1 = net_value[20:]
+print(net_val1)
+print (net)
+if float(net_val1) == float(net):
+    print(" TOTAL NET OF VOIDED TRANSACTION MATCHED IN VOID ITEMS REPORT")
     time.sleep(2)
 else:
-    print("TOTAL AMOUNT  IN SCENARIO 5 DO NOT MATCH IN CLASS AND SUBSCLASS REPORT")
-    time.sleep(2)
-
-# VAT Adj
-file = open("C:/Users/SERAN/Downloads/s.csv")
-vat_value = (file.readlines())[18]
-vat_val1 = vat_value[23:24]
-print(vat_val1)
-
-file = open("C:/Users/SERAN/Downloads/SCENARIO 5.csv")
-vat_value1 = (file.readlines())[601]
-vat_val2 = vat_value1[14:15]
-print(vat_val2)
-
-if float(vat_val1) == float(vat_val2):
-    print(" VAT ADJ  IN SCENARIO 5 MATCHED IN CLASS AND SUBSCLASS REPORT")
-    time.sleep(2)
-else:
-    print(" VAT ADJ  IN SCENARIO 5 DO NOT MATCH IN CLASS AND SUBSCLASS REPORT")
-    time.sleep(2)
-
-#LESS DISCOUNTS
-file = open("C:/Users/SERAN/Downloads/s.csv")
-ld_value = (file.readlines())[18]
-ld_val1 = ld_value[32:37]
-print(ld_val1)
-
-file = open("C:/Users/SERAN/Downloads/SCENARIO 5.csv")
-ld_value1 = (file.readlines())[599]
-ld_val2 = ld_value1[15:18]
-print(ld_val2)
-
-if float(ld_val1) == float(ld_val2):
-    print(" DISCOUNT  IN SCENARIO 5 MATCHED IN CLASS AND SUBSCLASS REPORT")
-    time.sleep(2)
-else:
-    print(" DISCOUNT  IN SCENARIO 5 DO NOT MATCH IN CLASS AND SUBSCLASS REPORT")
-    time.sleep(2)
-
-#NET SALES
-file = open("C:/Users/SERAN/Downloads/s.csv")
-ld_value = (file.readlines())[18]
-ld_val1 = ld_value[40:]
-print(ld_val1)
-
-file = open("C:/Users/SERAN/Downloads/SCENARIO 5.csv")
-ld_value1 = (file.readlines())[602]
-ld_val2 = ld_value1[12:19]
-ld_val3=ld_val2.replace(",","")
-print(ld_val3)
-
-if float(ld_val1) == float(ld_val3):
-    print(" NET SALES  IN SCENARIO 5 MATCHED IN CLASS AND SUBSCLASS REPORT")
-    time.sleep(2)
-else:
-    print(" NET SALES  IN SCENARIO 5 DO NOT MATCH IN CLASS AND SUBSCLASS REPORT")
+    print(" TOTAL NET OF VOIDED TRANSACTION DO NOT MATCH IN VOID ITEMS REPORT")
     time.sleep(2)
